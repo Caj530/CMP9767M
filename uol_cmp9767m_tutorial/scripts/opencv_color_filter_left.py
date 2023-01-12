@@ -49,3 +49,18 @@ def image_callback(ros_image):
   print ("The number of grapes in this image: ", str(number_of_objects_in_image))
   cv2.waitKey(0)
   cv2.destroyAllWindows()
+
+
+  
+
+def main(args):
+  rospy.init_node('image_converter', anonymous=True)
+  image_sub = rospy.Subscriber("/thorvald_001/kinect2_left_camera/hd/image_color_rect",Image, image_callback)
+  try:
+    rospy.spin()
+  except KeyboardInterrupt:
+    print("Shutting down")
+  cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    main(sys.argv)
