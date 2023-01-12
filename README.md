@@ -1,5 +1,3 @@
-# CMP9767M
-
 # Project summary
 
 This project provides a solution to make the Thorvald robot count the grapes in a vineyard mostly autonomously. It first uses movebase to move Thorvald to different points on the topological map and then opencv is used to detect and count the number of grapes at that specific point. Then the same task is carried out using topological navigation to guide Thorvald to specified points adjacent to the grapevine then count the number of grapes at each point and then return to its starting point
