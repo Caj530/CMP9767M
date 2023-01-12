@@ -68,107 +68,107 @@ Move the robot close to the grape vine and type:
 
                     rosservice call /topological_map_manager2/add_topological_node "
                     
-name: WayPoint6
-pose:
-  position:
-    x: -2.0
-    y: -5.0
-    z: 0.0
-  orientation:
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
+- name: WayPoint6
+-  pose:
+-  position:
+-    x: -2.0
+-    y: -5.0
+-    z: 0.0
+-  orientation:
+-    x: 0.0
+-    y: 0.0
+-    z: 0.0
+ -   w: 1.0
 add_close_nodes: false"
 
 - To connect this way point to waypoint 0 in the terminal type:
 
-rosservice call /topological_map_manager2/add_edges_between_nodes "
-origin: WayPoint0
-destination: WayPoint6
-action: move_base
-edge_id: WayPoint0_WayPoint6"
+- rosservice call /topological_map_manager2/add_edges_between_nodes "
+- origin: WayPoint0
+- destination: WayPoint6
+- action: move_base
+- edge_id: WayPoint0_WayPoint6"
 
 - Now we need to create an adjacent waypoint called waypoint 7. To create this way point type the following in the terminal:
 
-rosservice call /topological_map_manager2/add_topological_node "
-name: WayPoint7
-pose:
-  position:
-    x: 0.0
-    y: -5.0
-    z: 0.0
-  orientation:
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-add_close_nodes: false"
+- rosservice call /topological_map_manager2/add_topological_node "
+- name: WayPoint7
+- pose:
+-  position:
+-    x: 0.0
+-    y: -5.0
+-    z: 0.0
+-  orientation:
+-    x: 0.0
+-    y: 0.0
+-    z: 0.0
+-    w: 1.0
+- add_close_nodes: false"
 
 - To attach waypoint 7 to waypoint 6 we need to type the following in the terminal: 
 - 
-rosservice call /topological_map_manager2/add_edges_between_nodes "
-origin: WayPoint6
-destination: WayPoint7
-action: move_base
-edge_id: WayPoint6_WayPoint7"
+- rosservice call /topological_map_manager2/add_edges_between_nodes "
+- origin: WayPoint6
+- destination: WayPoint7
+- action: move_base
+- edge_id: WayPoint6_WayPoint7"
 
 - Now we need to make a new waypoint next to waypoint 7 called waypoint 8, again to create this node type the following in the terminal to create this new waypoint:
 
-rosservice call /topological_map_manager2/add_topological_node "
-name: WayPoint8
-pose:
-  position:
-    x: 2.0
-    y: -5.0
-    z: 0.0
-  orientation:
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-add_close_nodes: false"
+- rosservice call /topological_map_manager2/add_topological_node "
+- name: WayPoint8
+- pose:
+-  position:
+-    x: 2.0
+-    y: -5.0
+-    z: 0.0
+-  orientation:
+-    x: 0.0
+-    y: 0.0
+-   z: 0.0
+-    w: 1.0
+- add_close_nodes: false"
 
 - Now to attach it to waypoint 7 type the following in the terminal:
 
-rosservice call /topological_map_manager2/add_edges_between_nodes "
-origin: WayPoint7
-destination: WayPoint8
-action: move_base
-edge_id: WayPoint7_WayPoint8"
+- rosservice call /topological_map_manager2/add_edges_between_nodes "
+- origin: WayPoint7
+- destination: WayPoint8
+- action: move_base
+- edge_id: WayPoint7_WayPoint8"
 
 - To make the last waypoint called waypoint 9 type the following in the terminal:
 
-rosservice call /topological_map_manager2/add_topological_node "
-name: WayPoint9
-pose:
-  position:
-    x: 4.0
-    y: -5.5
-    z: 0.0
-  orientation:
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-add_close_nodes: false"
+- rosservice call /topological_map_manager2/add_topological_node "
+- name: WayPoint9
+- pose:
+-  position:
+-    x: 4.0
+-    y: -5.5
+-    z: 0.0
+-  orientation:
+-    x: 0.0
+-    y: 0.0
+-    z: 0.0
+-    w: 1.0
+- add_close_nodes: false"
 
 - To attach this waypoint to waypoint8 type this command in the terminal:
 
-rosservice call /topological_map_manager2/add_edges_between_nodes "
-origin: WayPoint8
-destination: WayPoint9
-action: move_base
-edge_id: WayPoint8_WayPoint9"
+- rosservice call /topological_map_manager2/add_edges_between_nodes "
+- origin: WayPoint8
+- destination: WayPoint9
+- action: move_base
+- edge_id: WayPoint8_WayPoint9"
 
 
 - Then to connect waypoint 9(the end of the vineyard) to waypoint 1 execute the following in the terminal:
 
-rosservice call /topological_map_manager2/add_edges_between_nodes "
-origin: WayPoint9
-destination: WayPoint1
-action: move_base
-edge_id: WayPoint9_WayPoint1"
+- rosservice call /topological_map_manager2/add_edges_between_nodes "
+- origin: WayPoint9
+- destination: WayPoint1
+- action: move_base
+- edge_id: WayPoint9_WayPoint1"
 
 
 - This should build a fully connected map for Thorvald to follow. Save it by executing the following command in your terminal:
